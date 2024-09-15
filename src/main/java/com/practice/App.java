@@ -1,6 +1,8 @@
 package com.practice;
 
+import com.practice.entities.Book;
 import com.practice.entities.Employee;
+import com.practice.repository.BookRepository;
 import com.practice.repository.EmployeeRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,21 +15,21 @@ import java.util.List;
 public class App {
 
     public static void main(String[] args) {
-       ApplicationContext context = SpringApplication.run(App.class, args);
-      var employeeRepo =  context.getBean(EmployeeRepository.class);
-        List<Employee> employees = List.of(
-                new Employee(null,"Prueba JPA1", LocalDate.now(),true),
-                new Employee(null,"Prueba JPA2", LocalDate.now(),false),
-                new Employee(null,"Prueba JPA3", LocalDate.now(),true),
-                new Employee(null,"Prueba JPA4", LocalDate.now(),false),
-                new Employee(null,"Prueba JPA5", LocalDate.now(),true),
-                new Employee(null,"Prueba JPA6", LocalDate.now(),false),
-                new Employee(null,"Prueba JPA7", LocalDate.now(),true),
-                new Employee(null,"Prueba JPA8", LocalDate.now(),false),
-                new Employee(null,"Prueba JPA9", LocalDate.now(),true)
+        ApplicationContext context = SpringApplication.run(App.class, args);
+        var bookRepo = context.getBean(BookRepository.class);
+        List<Book> books = List.of(
+                new Book(null, "Libro 1", "Ryan", 10, LocalDate.of(1999, 4, 12), 20.99, false),
+                new Book(null, "Libro 2", "Mario", 20, LocalDate.of(2005, 7, 18), 99.99, true),
+                new Book(null, "Libro 3", "Rocio", 110, LocalDate.now(), 12.8, false),
+                new Book(null, "Libro 4", "Pedro", 30, LocalDate.of(1997, 2, 20), 12.97, true),
+                new Book(null, "Libro 5", "Marcos", 146, LocalDate.of(2000, 6, 19), 28.9, false),
+                new Book(null, "Libro 6", "Lucas", 123, LocalDate.now(), 12.8, true),
+                new Book(null, "Libro 7", "Bryan", 53, LocalDate.of(2009, 8, 21), 78.9, false),
+                new Book(null, "Libro 8", "Lourdes", 56, LocalDate.of(2023, 5, 29), 89.9, true),
+                new Book(null, "Libro 9", "Roger", 87, LocalDate.of(1996, 9, 8), 89.17, false),
+                new Book(null, "Libro 10", "Wilmer", 109, LocalDate.now(), 12.8, true)
         );
-        employeeRepo.saveAll(employees);
-        employeeRepo.findAllByMarrieTrue().forEach(System.out::println);
+        bookRepo.saveAll(books);
     }
 
 }
