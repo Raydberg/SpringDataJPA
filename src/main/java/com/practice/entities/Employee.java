@@ -10,20 +10,19 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(name = "full_name", unique = true)
-    private String fullName;
-    @Column(name = "birth_date")
-    private LocalDate birthDate;
-    private Boolean marrie;
+    private String name;
+    @Column(name = "last_name")
+    private String lastName;
+    private Integer age;
 
     public Employee() {
     }
 
-    public Employee(Long id, String fullName, LocalDate birthDate, Boolean marrie) {
+    public Employee(Long id, String name, String lastName, Integer age) {
         this.id = id;
-        this.fullName = fullName;
-        this.birthDate = birthDate;
-        this.marrie = marrie;
+        this.name = name;
+        this.lastName = lastName;
+        this.age = age;
     }
 
     public Long getId() {
@@ -34,37 +33,37 @@ public class Employee {
         this.id = id;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getName() {
+        return name;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public LocalDate getBirthDate() {
-        return birthDate;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public Boolean getMarrie() {
-        return marrie;
+    public Integer getAge() {
+        return age;
     }
 
-    public void setMarrie(Boolean marrie) {
-        this.marrie = marrie;
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     @Override
     public String toString() {
         return "Employee{" +
                 "id=" + id +
-                ", fullName='" + fullName + '\'' +
-                ", birthDate=" + birthDate +
-                ", marrie=" + marrie +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
                 '}';
     }
 }

@@ -17,6 +17,7 @@ public class App {
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(App.class, args);
         var bookRepo = context.getBean(BookRepository.class);
+        var employeeRepo = context.getBean(EmployeeRepository.class);
         List<Book> books = List.of(
                 new Book(null, "Libro 1", "Ryan", 10, LocalDate.of(1999, 4, 12), 20.99, false),
                 new Book(null, "Libro 2", "Mario", 20, LocalDate.of(2005, 7, 18), 99.99, true),
@@ -30,6 +31,14 @@ public class App {
                 new Book(null, "Libro 10", "Wilmer", 109, LocalDate.now(), 12.8, true)
         );
         bookRepo.saveAll(books);
+        List<Employee> employees = List.of(
+                new Employee(null,"Employee1","Apellido1",12),
+                new Employee(null,"Employee2","Apellido2",20),
+                new Employee(null,"Employee3","Apellido3",23),
+                new Employee(null,"Employee4","Apellido4",54),
+                new Employee(null,"Employee5","Apellido5",65)
+        );
+        employeeRepo.saveAll(employees);
     }
 
 }

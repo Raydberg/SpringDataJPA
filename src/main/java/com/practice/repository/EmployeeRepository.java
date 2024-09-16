@@ -10,15 +10,15 @@ import java.util.Optional;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
-    Optional<Employee> findByFullName(String fullName);
-
-    Optional<Employee> findByFullNameAndBirthDate(String fullName, LocalDate birthDate);
-
-    List<Employee> findAllByBirthDateAfter(LocalDate birthDate);
-
-    List<Employee> findAllByBirthDateBetween(LocalDate min, LocalDate max);
-
-    List<Employee> findAllByMarrieTrue();
-
-    List<Employee> findAllByMarrieFalse();
+//    Optional<Employee> findByFullName(String fullName);
+//
+//    Optional<Employee> findByFullNameAndBirthDate(String fullName, LocalDate birthDate);
+//
+//    List<Employee> findAllByBirthDateAfter(LocalDate birthDate);
+//
+//    List<Employee> findAllByBirthDateBetween(LocalDate min, LocalDate max);
+//
+//    List<Employee> findAllByMarrieTrue();
+//
+//    List<Employee> findAllByMarrieFalse();
 }
